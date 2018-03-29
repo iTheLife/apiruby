@@ -2,13 +2,12 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="apiruby_development@localhost" uuid="90d3b1d1-9194-4e3d-a75d-cbb7e24bf40b">
-      <database-info product="PostgreSQL" version="10.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>life</user-name>
-      <introspection-schemas>apiruby_development:*</introspection-schemas>
     </data-source>
   </component>
 </project>

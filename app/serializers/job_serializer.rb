@@ -1,3 +1,3 @@
 class JobSerializer < ActiveModel::Serializer
-  attributes :name, :place, :company_id
+  attributes :name, :place, :company_id, :flag
 end

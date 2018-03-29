@@ -37,6 +37,14 @@ class Api::V1::CompaniesController < ApplicationController
     end
   end
 
+  def destroy
+    @companies = Company.find(params[:id])
+      @companies.destroy();
+      render json: {status: :succes, message: "Запись #{params[:id]} успешно удалена"}
+  end
+
+
+
 
   private
   def set_company

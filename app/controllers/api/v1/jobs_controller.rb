@@ -4,11 +4,11 @@ class Api::V1::JobsController < ApplicationController
 # для выполнения routes с ассоциацией 
   def index
     if params[:company_id]
-      @jobs = Company.find(params[:company_id]).jobs
+      @jobs = Company.find(params[:company_id]).jobs.where(flag: true)
     else
       @jobs = Job.all
     end
-    render json: { jobs: @jobs }, except: [:id, :created_at, :updated_at]
+    render json: { jobs: @jobs }, except: [:id, :created_at, :updated_at
   end
 
   def show
@@ -32,6 +32,11 @@ class Api::V1::JobsController < ApplicationController
     end
   end
 
+  def destroy
+    @jobs = Job.find(params[:id])
+    @jobs.update(flag: false);
+    render json: {status: :succes, message: "Работа #{params[:name]} успешно удалена"}
+  end
 
   private
   def set_job
